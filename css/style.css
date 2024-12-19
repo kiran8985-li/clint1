@@ -1,4 +1,4 @@
-/*******************************/
+x/*******************************/
 /********* General CSS *********/
 /*******************************/
 body {
@@ -6,102 +6,91 @@ body {
     background: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Hover Effect on Buttons */
+.header .hero .form .btn:hover {
+    color: #ffffff;
+    background: #00539C;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+    transform: translateY(-3px); /* Lift effect */
+    animation: pulse 0.3s ease-out; /* Pulse animation */
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Fade-in animation on scroll */
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
-    to {
+    100% {
         opacity: 1;
     }
 }
 
-h1,
-h2, 
-h3, 
-h4,
-h5, 
-h6 {
-    font-weight: 100;
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
 }
 
-a {
-    color: #454545;
-    transition: .3s;
-}
-
-a:hover,
-a:active,
-a:focus {
-    color: #333333;
-    outline: none;
-    text-decoration: none;
-    animation: moveLeft 0.3s ease-out;
-}
-
+/* Move left animation on scroll */
 @keyframes moveLeft {
     0% {
-        transform: translateX(0);
+        transform: translateX(-100px);
+        opacity: 0;
     }
     100% {
-        transform: translateX(-5px);
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
-.btn:focus {
-    box-shadow: none;
+.move-left {
+    animation: moveLeft 1s ease-out forwards;
 }
 
-.wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1366px;
-    margin: 0 auto;
-    background: #ffffff;
+/* Apply fade-in effect when an element scrolls into view */
+.fade-in-on-scroll {
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    transition: opacity 1s ease-out;
 }
 
-.back-to-top {
-    position: fixed;
-    display: none;
-    background: #FFD662;
-    color: #000000;
-    width: 44px;
-    height: 44px;
-    text-align: center;
-    line-height: 1;
-    font-size: 22px;
-    border-radius: 5px;
-    right: 15px;
-    bottom: 15px;
-    transition: background 0.5s;
-    z-index: 9;
+.fade-in-on-scroll.visible {
+    opacity: 1;
 }
 
-.back-to-top:hover {
-    color: #ffffff;
-    background: #00539C;
+/* Apply move-left effect when an element scrolls into view */
+.move-left-on-scroll {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
-.back-to-top i {
-    padding-top: 10px;
+.move-left-on-scroll.visible {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 /*******************************/
 /********** Header CSS *********/
 /*******************************/
-
 .header {
     position: relative;
     width: 100%;
     padding: 15px 0 0 0;
     background: #00539C;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
 }
 
 .header.home {
@@ -194,6 +183,7 @@ a:focus {
     color: #FFD662;
 }
 
+/* Scroll animations */
 @media (min-width: 992px) {
     .header .navbar {
         background: transparent !important;
@@ -215,7 +205,6 @@ a:focus {
     .header .navbar-light a.nav-link:hover,
     .header .navbar-light a.nav-link.active {
         color: #FFD662;
-        animation: moveLeft 0.3s ease-out;
     }
 }
 
@@ -269,7 +258,6 @@ a:focus {
 .header .navbar .btn:hover {
     color: #000000;
     background: #FFD662;
-    animation: moveLeft 0.3s ease-out;
 }
 
 .header .navbar .btn i {
@@ -297,7 +285,6 @@ a:focus {
     font-size: 60px;
     font-weight: 100;
     color: #ffffff;
-    animation: fadeIn 2s forwards;
 }
 
 .header .hero h2 span {
@@ -334,7 +321,6 @@ a:focus {
     background: rgba(255, 255, 255, .3);
     border-radius: 5px;
     text-align: center; /* Align content centrally */
-    animation: fadeIn 2s forwards;
 }
 
 /* Title style */
@@ -362,18 +348,23 @@ a:focus {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Button hover effect */
 .header .hero .form .btn:hover {
     color: #ffffff;
     background: #00539C;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
     transform: translateY(-3px); /* Lift effect */
-    animation: pulse 0.3s ease-out;
 }
 
 /* Optional: Add icons for better design */
 .header .hero .form .btn i {
     margin-right: 10px;
     font-size: 18px;
+}
+
+/* Animation for hover effect */
+.header .hero .form .btn:hover {
+    animation: pulse 0.3s ease-out;
 }
 
 /* Keyframes for pulse animation */
@@ -400,6 +391,7 @@ a:focus {
         max-width: none;
     }
 }
+
 /*******************************/
 /******* Page Header CSS *******/
 /*******************************/
