@@ -95,7 +95,7 @@ body {
 
 .header.home {
     margin-bottom: 45px;
-    background: linear-gradient(rgba(0, 83, 156, 1), rgba(0, 83, 156, .9), rgba(0, 83, 156, 1)), url(../img/header.jpg);
+    background: linear-gradient(rgba(59, 126, 190, 0.792), rgba(59, 126, 190, 0.792), rgba(59, 126, 190, 0.792)), url(../img/header.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,7 +118,7 @@ body {
 
 .header .brand a {
     color: #ffffff;
-    font-size: 60px;
+   
     font-weight: 100;
 }
 
@@ -392,6 +392,83 @@ body {
     }
 }
 
+
+
+
+
+
+
+/* Header Styling */
+.header {
+    background-color: #00539C; /* Dark background */
+    padding: 20px 0;
+}
+
+/* Brand Styling */
+.brand a {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(90deg, #FFD662, #FF6F61); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideIn 1.5s ease-out;
+    text-align: center; /* Center text alignment */
+    width: 100%; /* Ensure it spans full width */
+}
+
+/* Hover Effect */
+.brand a:hover {
+    color: #ffbb00;
+    text-shadow: 0 0 10px #ffbb00;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile View (576px and Below) */
+@media (max-width: 576px) {
+    .header {
+        padding: 15px 0; /* Reduce padding for smaller screens */
+    }
+
+    .brand a {
+        font-size: 20px; /* Smaller font size for mobiles */
+        padding: 8px; /* Add padding for better spacing */
+        line-height: 0.9; /* Improve readability */
+        font-size: 16px; /* Decrease font size for mobiles */
+        font-size: 40px;
+    }
+}
+
+.brand a:hover {
+    color: #ffbb00;
+    text-shadow: 0 0 10px #ffbb00;
+}
+
+/* Tablet View (768px and Below) */
+@media (max-width: 768px) {
+    .header {
+        padding: 18px 0; /* Slightly larger padding than mobile */
+    }
+
+    .brand a {
+        font-size: 40px;
+        
+    }
+}
+
 /*******************************/
 /******* Page Header CSS *******/
 /*******************************/
@@ -505,6 +582,11 @@ body {
     left: 0;
     border-radius: 5px;
 }
+
+
+
+
+
 
 /*******************************/
 /********** About CSS **********/
