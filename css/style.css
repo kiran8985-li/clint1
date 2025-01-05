@@ -411,7 +411,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    background: linear-gradient(90deg, #FFD662, #FF6F61); /* Gradient text */
+    background: linear-gradient(90deg, #ffd562, #fff94b); /* Gradient text */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: slideIn 1.5s ease-out;
