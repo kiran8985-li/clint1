@@ -143,7 +143,19 @@ body {
 .header .topbar-col a {
     color: #ffffff;
     font-size: 30px;
+    display: inline-block;
+    animation: slide-in-right 2s ease-out forwards;
 }
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%); /* Start from the right side */
+    }
+    100% {
+        transform: translateX(0); /* Stop in place */
+    }
+}
+
 
 .header .topbar-col a i {
     margin-right: 10px;
@@ -276,24 +288,38 @@ body {
 }
 
 .header .hero {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
-
 .header .hero h2 {
     margin: 0;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 100;
     color: #ffffff;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Start from left side */
+    animation: slideIn 1s forwards; /* Apply slideIn animation */
 }
 
 .header .hero h2 span {
     color: #FFD662;
 }
 
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* Starts from the left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Ends in the normal position */
+        opacity: 1; /* Fade in */
+    }
+}
+
+
 .header .hero p {
     margin: 10px 0 20px 0;
-    font-size: 22px;
+    font-size: 17px;
     color: #ffffff;
 }
 
